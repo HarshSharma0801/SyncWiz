@@ -8,6 +8,7 @@ import bodyParser from "body-parser";
 import Added from "./Routes/AddHandler.js";
 import Logged from "./Routes/LoginHandler.js";
 import Regitsered from "./Routes/RegisterHandler.js";
+import Read from "./Routes/ReadHandler.js";
 
 const app = express();
 
@@ -41,6 +42,9 @@ app.use(Logged);
 app.use(Regitsered);
 
 app.use(Added);
+
+app.use(Read);
+
 
 
 app.listen(3000, () => {

@@ -1,6 +1,5 @@
 import axios from "axios";
 
-const Url = '';
 
 const Add = async(data)=>{
    
