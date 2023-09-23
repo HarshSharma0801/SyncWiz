@@ -62,7 +62,6 @@ const Edit =()=>{
    },[info])
 
 
-   console.log(userData)
 
 
      
