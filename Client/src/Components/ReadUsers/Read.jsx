@@ -8,7 +8,7 @@ const GetUsers = ()=>{
 
     useEffect(()=>{
      Users()
-    },[User])
+    },[])
   
     const Users = async ()=>{
         const data = await ReadUsers() 
@@ -34,7 +34,7 @@ const GetUsers = ()=>{
 
                 {User &&
                   User.map((data) => (
-                   <Layout key={data.id}  name={data.name}  email={data.email} phone={data.phone} description={data.description} />
+                   <Layout key={data.id}  name={data.name}  email={data.email} phone={data.phone} description={data.description} id={data._id} />
                   ))
                 }
 

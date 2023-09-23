@@ -1,3 +1,7 @@
+import {  Link } from 'react-router-dom';
+
+
+
 const Layout = (props) => {
   return (
     <tr class="text-gray-700">
@@ -18,8 +22,11 @@ const Layout = (props) => {
       <td class="px-4 py-3 text-sm border">{props.description}</td>
 
       <td class="px-4 py-3 text-sm border">
-        <button className="w-24 bg-blued text-black rounded-md hover:bg-blueded">Edit</button>
+        <Link to={`/Edit/${props.id}`}>
+        <button className="w-24 bg-blued text-black rounded-md hover:bg-blueded" >Edit</button>
+        </Link>
       </td>
+
       <td class="px-4 py-3 text-sm border">
         <button className="w-24 bg-red-500 text-black rounded-md hover:bg-redded">Delete</button>
       </td>

@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import AddUserForm from "./Components/AddUser/Add";
 import GetUsers from "./Components/ReadUsers/Read";
 import Navbar from "./Components/Pages/Navbar";
+import Edit from "./Components/EditUsers/Edit";
 function App() {
   return (
     <>
@@ -23,6 +24,8 @@ function App() {
  
     <Route path="/AddUser" element={<AddUserForm/>} />
       <Route path="/Read" element={<GetUsers/>} />
+      <Route path="/Edit/:id" element={<Edit/>} />
+
      
       
 

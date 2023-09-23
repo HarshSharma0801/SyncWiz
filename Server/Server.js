@@ -9,6 +9,10 @@ import Added from "./Routes/AddHandler.js";
 import Logged from "./Routes/LoginHandler.js";
 import Regitsered from "./Routes/RegisterHandler.js";
 import Read from "./Routes/ReadHandler.js";
+import Edit from "./Routes/EditHandler.js";
+import Update from "./Routes/UpdateHandler.js";
+
+
 
 const app = express();
 
@@ -44,6 +48,12 @@ app.use(Regitsered);
 app.use(Added);
 
 app.use(Read);
+
+app.use(Edit);
+
+app.use(Update);
+
+
 
 
 
