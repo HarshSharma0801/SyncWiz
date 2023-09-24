@@ -10,6 +10,7 @@ const Layout = (props) => {
     await Delete(props.id);
     console.log(props.id)
     setTimeout(()=>{
+      
       Navigate("/Read")
 
     },1000)
