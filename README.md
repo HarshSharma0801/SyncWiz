@@ -1,2 +1,2 @@
 # SyncWiz
-Under Development
+MERN
