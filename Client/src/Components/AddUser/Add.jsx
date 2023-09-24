@@ -1,12 +1,14 @@
 import Add from './AddApi';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function AddUserForm() {
+const AddUserForm = ()=>{
+
+  const Navigate = useNavigate();
   const [userData, setUserData] = useState({
     name: '',
     phone: '',
     email: '',
-    image: '',
     description: '',
   });
 
@@ -23,12 +25,15 @@ function AddUserForm() {
 
     console.log(userData);
     Add(userData)
+    setTimeout(()=>{
+      Navigate("/Read")
+
+    },1000)
 
     setUserData({
       name: '',
       phone: '',
       email: '',
-      image: '',
       description: '',
     });
   };
@@ -82,21 +87,7 @@ function AddUserForm() {
             required
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">
-            Image 
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="image"
-            type="file"
-            placeholder="Image"
-            name="image"
-            value={userData.image}
-            onChange={handleChange}
-            required
-          />
-        </div>
+    
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">
             Description

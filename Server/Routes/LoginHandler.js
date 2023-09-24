@@ -37,9 +37,6 @@ const Logged = express();
       console.log("error")
     }
 
-    
-
-    
   
   })
 

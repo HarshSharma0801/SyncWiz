@@ -12,7 +12,7 @@ const HomePage = () => {
         <p className="text-lg mb-8">Explore and discover amazing content.</p>
 
         <a
-          href="/AddUser"
+          href="/Read"
           className="bg-white text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-full text-lg font-semibold transition duration-300 ease-in-out"
         >
           Get Started

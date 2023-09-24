@@ -4,7 +4,10 @@ import RegisterPage from "./Components/Login/Register";
 import HomePage from "./Components/Pages/Home";
 import MatchAllRoute from "./Components/Pages/MatchAllRoute";
 import { Route, Routes } from "react-router-dom";
-import AddUserForm from "./Components/User/Add";
+import AddUserForm from "./Components/AddUser/Add";
+import GetUsers from "./Components/ReadUsers/Read";
+import Navbar from "./Components/Pages/Navbar";
+import Edit from "./Components/EditUsers/Edit";
 function App() {
   return (
     <>
@@ -12,15 +15,29 @@ function App() {
       <Route path="/" element={<LoginPage/>} />
       <Route path="/register" element={<RegisterPage/>} />
       <Route path="/home" element={<HomePage/>} />
-      <Route path="/AddUser" element={<AddUserForm/>} />
+      
+    </Routes>
+
+    <Navbar/>
+
+    <Routes>
+ 
+    <Route path="/AddUser" element={<AddUserForm/>} />
+      <Route path="/Read" element={<GetUsers/>} />
+      <Route path="/Edit/:id" element={<Edit/>} />
+
+     
+      
 
       <Route path="*" element={<MatchAllRoute />} />
-
-
-
-
-
     </Routes>
+  
+    
+
+
+
+
+
       
       
     </>
