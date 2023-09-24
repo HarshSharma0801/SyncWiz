@@ -25,8 +25,10 @@ const AddUserForm = ()=>{
 
     console.log(userData);
     Add(userData)
-    Navigate("/Read")
+    setTimeout(()=>{
+      Navigate("/Read")
 
+    },1000)
 
     setUserData({
       name: '',

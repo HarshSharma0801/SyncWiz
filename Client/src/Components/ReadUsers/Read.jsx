@@ -1,19 +1,26 @@
 import ReadUsers from "./ReadApi";
-import React , {useState , useEffect} from "react";
+import React , {useState , useEffect ,useCallback} from "react";
 import Layout from "./table";
 
 const GetUsers = ()=>{
 
-    const [User,SetUsers] = useState([])
+  const [User,SetUsers] = useState([])
 
-    useEffect(()=>{
-     Users()
-    },[])
-  
-    const Users = async ()=>{
-        const data = await ReadUsers() 
-        SetUsers(data.data)
-    }
+  useEffect(()=>{
+    console.log("Effect is running");
+    Users()
+   
+   },[])
+
+    const Users =   useCallback(async ()=>{
+      const data = await ReadUsers() 
+      SetUsers(data.data) 
+  },[User]) 
+
+
+
+
+   
 
     return(
             <section class="container mx-auto p-6 font-mono">

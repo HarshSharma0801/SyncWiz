@@ -45,7 +45,7 @@ const Edit =()=>{
     
         console.log(userData);
         Update(userData , id) ;
-        Navigate("/Read")
+      
     
     
         setUserData({
@@ -54,6 +54,10 @@ const Edit =()=>{
           email: '',
           description: '',
         });
+        setTimeout(()=>{
+          Navigate("/Read")
+
+        },1000)
       };
 
    useEffect(()=>{

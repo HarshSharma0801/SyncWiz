@@ -9,9 +9,14 @@ Update.post('/edit/:id' , async(req,res)=>{
 
 
    try {
-    const data = req.body;
+    const value = req.body;
+    const data = await Users.findByIdAndUpdate(id , value)
+    res.status(200).json(data)
       
-    console.log(data)
+    console.log(value);
+    console.log("updated");
+
+
     
     
    } catch (error) {
