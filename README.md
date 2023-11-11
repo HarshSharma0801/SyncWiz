@@ -1,2 +1,2 @@
 # SyncWiz
-MERN
+CRUD Api created with Nodejs 
