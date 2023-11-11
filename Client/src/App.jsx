@@ -10,7 +10,7 @@ import axios from "axios";
 function App() {
 
 
-  axios.defaults.baseURL = 'http://localhost:3000';
+  axios.defaults.baseURL = 'https://syncwiz-backend.onrender.com';
 
   return (
     <>

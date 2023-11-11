@@ -5,7 +5,7 @@ const ReadUsers = async()=>{
    
     try {
 
-       return await axios.get('http://localhost:3000/read')
+       return await axios.get('/read')
 
         
     } catch (error) {
