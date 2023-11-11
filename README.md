@@ -1,2 +1,2 @@
 # SyncWiz
-Under Development
+CRUD Api created with Nodejs 
