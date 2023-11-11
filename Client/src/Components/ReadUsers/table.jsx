@@ -19,6 +19,7 @@ const Layout = (props) => {
 
 
   return (
+    <>
     <tr class="text-gray-700">
       <td class="px-4 py-3 border">
         <div class="flex items-center text-sm">
@@ -28,13 +29,12 @@ const Layout = (props) => {
         </div>
       </td>
 
-      <td class="px-4 py-3 text-ms font-semibold border text-black">
-        {props.email}
+      <td class="px-4 py-3 text-ms font-semibold border text-gray-600">
+        {props.Github}
       </td>
 
-      <td class="px-4 py-3 text-sm border">{props.phone}</td>
+      <td class="px-4 py-3 text-sm border">{props.msg}</td>
 
-      <td class="px-4 py-3 text-sm border">{props.description}</td>
 
       <td class="px-4 py-3 text-sm border">
         <Link to={`/Edit/${props.id}`}>
@@ -46,6 +46,8 @@ const Layout = (props) => {
         <button className="w-24 bg-red-500 text-black rounded-md hover:bg-redded" onClick={Deleted}>Delete</button>
       </td>
     </tr>
+    </>
+    
   );
 };
 export default Layout;

@@ -11,7 +11,7 @@ Added.post('/add' , async(req,res)=>{
     const data = req.body;
     
     await Users.insertMany([data])
-    res.status(200).json("deleted")
+    res.status(200).json("Added")
     console.log("Added User")
     
    } catch (error) {

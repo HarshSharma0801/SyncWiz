@@ -6,7 +6,7 @@ const Update = async(data , id)=>{
 
 try {
 
-    return await axios.post(`http://localhost:3000/edit/${id}` , data)
+    return await axios.post(`/edit/${id}` , data)
     
 } catch (error) {
     console.log(error)
