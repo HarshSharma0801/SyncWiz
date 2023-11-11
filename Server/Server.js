@@ -6,12 +6,13 @@ import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import Added from "./Routes/AddHandler.js";
-import Logged from "./Routes/LoginHandler.js";
-import Regitsered from "./Routes/RegisterHandler.js";
+
 import Read from "./Routes/ReadHandler.js";
 import Edit from "./Routes/EditHandler.js";
 import Update from "./Routes/UpdateHandler.js";
 import Deleted from "./Routes/DeleteHandler.js";
+import 'dotenv/config'
+
 
 const app = express();
 
@@ -24,8 +25,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const ConnectionString =
-  "mongodb+srv://Harsh2:dragonite1@forprojects.wjbiut0.mongodb.net/SyncWiz";
+const ConnectionString = process.env.MONGO_URL;
 
 mongoose.connect(ConnectionString, {
   useNewUrlParser: true,
@@ -40,9 +40,6 @@ db.on("open", function () {
   console.log("Successfull Connected to Database ");
 });
 
-app.use(Logged);
-
-app.use(Regitsered);
 
 app.use(Added);
 

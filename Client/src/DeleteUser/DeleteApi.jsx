@@ -9,7 +9,7 @@ const Delete = async (id)=>{
     try {
         console.log(sentdata)
 
-     await axios.post("http://localhost:3000/delete" , sentdata)
+     await axios.post("/delete" , sentdata)
 
 
     } catch (error) {

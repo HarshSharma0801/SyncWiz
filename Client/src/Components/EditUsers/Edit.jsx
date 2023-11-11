@@ -7,11 +7,9 @@ const Edit =()=>{
 
     const [userData, setUserData] = useState({
 
-        name: '' ,
-        phone: '' ,
-        email: '' ,
-        description: '' 
-
+      name: '',
+    githubUsername: '',
+    YourQuote: '',
       });
 
 
@@ -50,9 +48,8 @@ const Edit =()=>{
     
         setUserData({
           name: '',
-          phone: '',
-          email: '',
-          description: '',
+          githubUsername: '',
+          YourQuote: '',
         });
         setTimeout(()=>{
           Navigate("/Read")
@@ -92,51 +89,39 @@ return(
        
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-          Phone
+        GitHub Username
+
         </label>
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="phone"
-          type="text"
-          placeholder="Phone"
-          name="phone"
-          value={userData.phone}
-          onChange={handleChange}
-          required
-        />
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="Github"
+            type="text"
+            placeholder="GitHub Username"
+            name="githubUsername"
+            value={userData.githubUsername}
+            onChange={handleChange}
+            required
+          />
       </div>
    
    
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-          Email
-        </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="email"
-          type="email"
-          placeholder="Email"
-          name="email"
-          value={userData.email}
-          onChange={handleChange}
-          required
-        />
+      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+            Your Quote
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="quote"
+            type="text"
+            placeholder="Your Quote"
+            name="YourQuote"
+            value={userData.YourQuote}
+            onChange={handleChange}
+            required
+          />
       </div>
   
-      <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">
-          Description
-        </label>
-        <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="description"
-          placeholder="Description"
-          name="description"
-          value={userData.description}
-          onChange={handleChange}
-          required
-        />
-      </div>
+ 
       <div className="flex items-center justify-between">
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

@@ -5,7 +5,7 @@ const getUser = async (id)=>{
   
 try {
 
-    return await axios.get(`http://localhost:3000/edit/${id}`)
+    return await axios.get(`/edit/${id}`)
     
 
 } catch (error) {
