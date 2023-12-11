@@ -7,7 +7,6 @@ const Delete = async (id)=>{
     id:id
    }
     try {
-        console.log(sentdata)
 
      await axios.post("/delete" , sentdata)
 
