@@ -23,11 +23,10 @@ const AddUserForm = ()=>{
     e.preventDefault();
 
     console.log(userData);
-    Add(userData)
-    setTimeout(()=>{
-      Navigate("/Read")
-
-    },1000)
+    
+  if(Add(userData)){
+    Navigate('/Read')
+  }
 
     setUserData({
       name: '',

@@ -1,12 +1,10 @@
 import { useState,useEffect } from "react";
 import { useNavigate,useParams } from "react-router-dom";
-import getUser from "./EditApi";
 import Update from "./UpdateApi";
-
+import axios from "axios";
 const Edit =()=>{
 
     const [userData, setUserData] = useState({
-
       name: '',
     githubUsername: '',
     YourQuote: '',
@@ -19,16 +17,48 @@ const Edit =()=>{
 
     const {id} = useParams();
 
+    const getUser = async ()=>{
+  
+      try {
+      
+         await axios.get(`/edit/${id}`).then(res=>{
+          console.log(id)
+          const isJSON = (str) => {
+            try {
+              JSON.parse(str);
+              return true;
+            } catch (e) {
+              return false;
+            }
+          };
+          if(res){
+            console.log(res.data.data)
+            if(isJSON(res.data.data)){
+              
+            
+              setUserData(JSON.parse(res.data.data)) 
+            }
+            else{
+              setUserData(res.data.data) 
+  
+            }
+          }
+         })
+          
+      
+      } catch (error) {
+          console.log(error)
+      }
+       
+      
+      }
 
   useEffect(()=>{
-   GetUsers();
+    getUser();
   },[])
   
 
-  const GetUsers = async ()=>{
-    const res = await getUser(id)
-    Setinfo(res.data);
-  } 
+
 
       const handleChange = (e) => {
         const { name, value } = e.target;

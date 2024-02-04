@@ -1,21 +1,50 @@
-import ReadUsers from "./ReadApi";
 import React , {useState , useEffect ,useCallback} from "react";
 import Layout from "./table";
-
+import axios from "axios";
 const GetUsers = ()=>{
 
   const [User,SetUsers] = useState([])
+  const ReadUsers = async()=>{
+   
+    try {
 
+       return await axios.get('/read').then(res=>{
+        const isJSON = (str) => {
+          try {
+            JSON.parse(str);
+            return true;
+          } catch (e) {
+            return false;
+          }
+        };
+        if(res){
+          console.log(res.data.data)
+          if(isJSON(res.data.data)){
+            
+            const main = JSON.parse(res.data.data).map(rt=>{
+              return {...rt , _id:rt._id.$oid        }
+            })
+            SetUsers(main) 
+          }
+          else{
+            SetUsers(res.data.data) 
+
+          }
+        }
+       })
+
+        
+    } catch (error) {
+        console.log(error)
+    }
+
+}
   useEffect(()=>{
     console.log("Effect is running");
-    Users()
+    ReadUsers()
    
    },[])
 
-    const Users =   useCallback(async ()=>{
-      const data = await ReadUsers() 
-      SetUsers(data.data) 
-  },[User]) 
 
 
 

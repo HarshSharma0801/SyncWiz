@@ -8,7 +8,8 @@ Read.get('/read', async (req,res)=>{
 
  try {
     const data = await Users.find()
-    res.status(200).json(data)
+    const main = JSON.stringify({data:data});
+    res.status(200).send(main)
     
  } catch (error) {
     console.log(error)
