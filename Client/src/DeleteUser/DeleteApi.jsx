@@ -8,7 +8,7 @@ const Delete = async (id)=>{
    }
     try {
 
-     await axios.post("/delete" , sentdata)
+     await axios.delete(`/delete/${id}` , sentdata)
 
 
     } catch (error) {
